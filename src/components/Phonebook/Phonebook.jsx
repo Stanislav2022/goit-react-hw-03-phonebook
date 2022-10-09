@@ -10,12 +10,6 @@ export default class Phonebook extends Component {
         contacts: [],
         filter: ''
     };
-    componentDidUpdate(prevProps, prevState) {
-        const { contacts } = this.state;
-        if (prevState.contacts !== contacts) {
-            localStorage.setItem("contacts", JSON.stringify((contacts)));
-        }
-    }
 
     addContats = (data) => {
           if (this.isDuplicate(data)) {
